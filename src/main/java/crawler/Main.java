@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class Main {
-    private static int MAX_THREADS = 2;
+    private static int MAX_THREADS = 10;
     private static int MAX_THREADS_PER_WEBSITE = 2;
     private static String SOURCE_PATH = "resources/urls.csv";
     private static String DESTINATION_PATH = "html/";

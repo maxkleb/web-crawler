@@ -7,3 +7,12 @@ UrlsReader -> Queue -> CrawlerManager -> WebsitePersister
 
 UrlsReader and WebsitePersister are designed to be single threaded.
 CrawlerManager creates Crawler (worker) for every domain and processes it in parallel.
+
+
+
+# To run:
+```
+mvn clean package
+
+java -jar target/crawler-1.0-SNAPSHOT.jar
+```

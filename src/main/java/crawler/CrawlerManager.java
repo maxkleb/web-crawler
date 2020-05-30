@@ -48,7 +48,6 @@ public class CrawlerManager implements Runnable {
             }
         } catch (InterruptedException e) {
             System.out.println("Terminating CrawlerPool...");
-            awaitTerminationAfterShutdown();
         }
     }
 
@@ -75,21 +74,6 @@ public class CrawlerManager implements Runnable {
             Thread.currentThread().interrupt();
         } else {
             execute(webSite.getHost(), webSite.getNumberOfPagesToDownload());
-        }
-    }
-
-    /**
-     * In case of InterruptedException CrawlerPool will be gracefully shutdown.
-     */
-    private void awaitTerminationAfterShutdown() {
-        executor.shutdown();
-        try {
-            if (!executor.awaitTermination(10, TimeUnit.SECONDS)) {
-                executor.shutdownNow();
-            }
-        } catch (InterruptedException ex) {
-            executor.shutdownNow();
-            Thread.currentThread().interrupt();
         }
     }
 }
