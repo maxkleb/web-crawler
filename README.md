@@ -2,7 +2,7 @@ Basic web-crawler.
 
 It consumes the input from resources/urls.csv and processes crawling for every link, limited by number of sub-links.
 
-Archetecture:
+Architecture:
 UrlsReader -> Queue -> CrawlerManager -> WebsitePersister
 
 UrlsReader and WebsitePersister are designed to be single threaded.
