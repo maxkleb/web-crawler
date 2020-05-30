@@ -14,5 +14,5 @@ CrawlerManager creates Crawler (worker) for every domain and processes it in par
 ```
 mvn clean package
 
-java -jar target/crawler-1.0-SNAPSHOT.jar
+java -jar target/crawler-1.0-SNAPSHOT.jar resources/urls.csv
 ```
