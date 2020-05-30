@@ -44,4 +44,4 @@ target/
 
 # Result            #
 ####################
-html
+*.html
