@@ -15,7 +15,7 @@ import java.util.concurrent.*;
 public class Crawler implements Runnable {
     private ExecutorService executor;
     private List<Page> pages = new LinkedList<>();
-    private LinkedBlockingQueue<Future<Page>> queue = new LinkedBlockingQueue();
+    private LinkedBlockingQueue<Future<Page>> queue = new LinkedBlockingQueue(1024);
     private LinkedBlockingQueue<Page> resultsQueue;
     private int maxPagesNumber;
     private ConcurrentMap<String, String> visitedWebsites;;

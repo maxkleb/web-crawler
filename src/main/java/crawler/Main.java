@@ -17,8 +17,8 @@ public class Main {
             System.out.println("Running with source path " + sourcePath);
 
             ConcurrentMap<String, String> visitedWebsites = new ConcurrentHashMap<>();
-            LinkedBlockingQueue<WebHost> urlQueue = new LinkedBlockingQueue();
-            LinkedBlockingQueue<Page> resultsQueue = new LinkedBlockingQueue();
+            LinkedBlockingQueue<WebHost> urlQueue = new LinkedBlockingQueue(1024);
+            LinkedBlockingQueue<Page> resultsQueue = new LinkedBlockingQueue(1024);
 
             Thread urlsReader = new Thread(new UrlsReader(urlQueue, sourcePath));
             Thread crawlerPool = new Thread(new WebsitePersister(resultsQueue, DESTINATION_PATH));
