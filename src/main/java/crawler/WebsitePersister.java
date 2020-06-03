@@ -50,9 +50,11 @@ public class WebsitePersister implements Runnable {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-            writer.write(doc);
-            writer.flush();
-            writer.close();
+            if (writer != null) {
+                writer.write(doc);
+                writer.flush();
+                writer.close();
+            }
         }
     }
 }
